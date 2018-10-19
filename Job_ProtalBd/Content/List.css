@@ -1,0 +1,32 @@
+﻿body {
+}
+.webgrid-table{
+    font-family:"Trebuchet MS",Arial,sans-serif;
+    font-size:1.2px;
+    width:100%;
+    display:table;
+    border-collapse:separate;
+    border:solid 1px #988f21;
+    background-color:white;
+}
+.webgrid-table td, th{
+    border:1px solid #988f21;
+    padding:3px 7px 2px;
+}
+.webgrid-header{
+    background-color:#A7C942;
+    color:#FFFFFF;
+    padding-bottom:4px;
+    padding-top:5px;
+    text-align:left;
+}
+.webgrid-footer{
+
+}
+.webgrid-row-style{
+    padding:3px 7px 2px;
+}
+.webgrid-alternating-row{
+    background-color:#FAF2D3;
+    padding:3px 7px 2px;
+}

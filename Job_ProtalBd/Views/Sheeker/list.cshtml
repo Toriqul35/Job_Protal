@@ -1,0 +1,68 @@
+﻿@{
+    Layout = null;
+}
+@{ 
+    ViewBag.Title = "Job Sheeker List";
+    var gird = new WebGrid(source: Model, canPage: true, rowsPerPage: 10);
+    gird.Pager(WebGridPagerModes.All);
+}
+<h2> List Of  Job Sheeker </h2>
+<style type="text/css">
+    .webgrid-table {
+        font-family: "Trebuchet MS",Arial,sans-serif;
+        font-size: 12px;
+        width: 100%;
+        display: table;
+        border-collapse: separate;
+        border: solid 1px #988f21;
+        background-color: white;
+    }
+
+        .webgrid-table td, th {
+            border: 1px solid #988f21;
+            padding:15px;
+        }
+
+    .webgrid-header {
+        background-color: #A7C942;
+        color: #FFFFFF;
+        padding-bottom: 4px;
+        padding-top: 5px;
+        text-align: left;
+    }
+
+    .webgrid-footer {
+    }
+
+    .webgrid-row-style {
+        padding: 15px;
+    }
+
+    .webgrid-alternating-row {
+        background-color: #FAF2D3;
+        padding: 3px 7px 2px;
+    }
+</style>
+<div id="content">
+    @gird.GetHtml(
+
+    tableStyle: "webgrid-table",
+    headerStyle: "webgrid-header",
+    footerStyle: "webgrid-footer",
+    alternatingRowStyle: "webgrid-alternating-row",
+    rowStyle: "webgrid-row-style",
+    columns:gird.Columns(
+        gird.Column(columnName: "UserId", header: "UserId"),
+        gird.Column(columnName: "FirstName", header: "FirstName"),
+        gird.Column(columnName: "LastName", header: "LastName"),
+        gird.Column(columnName: "State", header: "State"),
+        gird.Column(columnName: "City", header: "City"),
+        gird.Column(columnName: "Gender", header: "Gender"),
+        gird.Column(columnName: "Password", header: "Password")
+
+
+
+
+        ))
+
+</div>

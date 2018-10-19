@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/sheeker/menubar.css")
+</head>
+<body>
+    <div class="navbar">
+       <a href="#home">Home </a>
+        <a href="#news">Search Company</a>
+        <a href="#news">Search Job</a>
+        <a href="#news">Notice</a>
+        <a href="#news">Total Enrolled</a>
+        <a href="#news">Interview</a>
+        <a href="#news" style="padding-left:520px">Setting</a>
+        <a href="#news">Logout</a>
+    </div>
+    <div class="vertical-menu">
+        <a class="active">Resume</a>
+        <ul><li>@Html.ActionLink("Resume", "About", "Home")</li></ul>
+        <ul><li>@Html.ActionLink("Edit", "tooo", "Home")</li></ul>
+        <a href="#">Edit Resume</a>
+        <a href="#">Upload Resume</a>
+        <a href="#">Email Resumne</a>
+        <a href="#" class="active">My Activity</a>
+        <a href="#">ShortList Job</a>
+        <a href="#">Job Alert</a>
+        <a href="#">Following Company</a>
+        <a href="#">Emailed Resumne</a>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - <b>Job Protal</b></p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

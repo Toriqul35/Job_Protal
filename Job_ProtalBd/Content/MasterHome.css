@@ -1,0 +1,47 @@
+﻿
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+    .menu ul li {
+        background-color: cornflowerblue;
+        border: solid 1px white;
+        height: 35px;
+        width: 130px;
+        line-height: 35px;
+        float: left;
+        position: relative;
+        text-align:center;
+    }
+
+        .menu ul li a {
+            text-align: center;
+            color: #fff;
+            display:none;
+            text-decoration: none;
+        }
+
+            .menu ul li a:hover {
+                color:red;
+                background-color:forestgreen;
+            }
+
+    .menu ul ul {
+        position: absolute;
+        display: none;
+    }
+
+    .menu ul li > ul li {
+        background-color: #18e27f;
+        color: #edeef8;
+        border: solid 1px white;
+    }
+
+    .menu ul li:hover > ul {
+        display: block;
+    }

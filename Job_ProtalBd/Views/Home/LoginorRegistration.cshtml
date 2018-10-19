@@ -1,0 +1,44 @@
+﻿
+<DOCTYPE HTML>
+<html>
+<head>
+    <title>
+
+    </title>
+    @Styles.Render("~/Content/Home/LoginRegitration.css")
+    <link href="~/Views/Home/ViewPage1.cshtml"/>
+</head>
+<body>
+    <div class="left">
+        <from>
+            <div class="st2">
+                <h2 class="h2">Job Sheeker </h2>
+                <p>Registraion and login for your job Sheeker account</p>
+                  <ul> 
+                     <li  class="butto1">@Html.ActionLink("Registration", "Registration", "Sheeker")</li>
+                  </ul>
+                  <ul>
+                     <li  class="button2">@Html.ActionLink("login", "Login", "Sheeker")</li>
+                  </ul>
+            </div>
+        </from>
+    </div>
+    <div class="right">
+        <from>
+            <div class="st2">
+                <h2 class="h2">Company </h2>
+                <p>Registraion and login for yourCompany account</p>
+                <ul>
+                    <li class="butto3">@Html.ActionLink("Registration", "Login", "Registration1")</li>
+                </ul>
+                <ul>
+                    <li class="button4">@Html.ActionLink("login", "Login", "Registration1")</li>
+                </ul>
+            </div>
+        </from>
+    </div>
+
+   
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+﻿*{
+    margin:0px;
+    padding:0px;
+}
+.navbar {
+    overflow: hidden;
+    background-color:cadetblue;
+
+}
+    .navbar a {
+        float: left;
+        font-size: 16px;
+        color: ghostwhite;
+        text-align: center;
+        padding: 15px 15px;
+        text-decoration: none;
+    }
+.vertical-menu {
+    width: 100px;
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+}
+
+    .vertical-menu a:hover {
+        background-color: #ccc;
+    }
+
+    .vertical-menu a.active {
+        background-color: #4CAF50;
+        color: white;
+    }

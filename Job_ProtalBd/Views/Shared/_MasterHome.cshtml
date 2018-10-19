@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title www.jobprotalbd.com</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/Home/menu.css")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Job Protal", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Company Search", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Job Search", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Notice", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Total Enrolled", "_Jobsheeker", "Views")</li>
+                    <li>@Html.ActionLink("Interview", "list", "Sheeker")</li>
+                      <li style="margin-left:300px">@Html.ActionLink("Registration or Login", "LoginorRegistration", "Home")</li>
+                    <li>@Html.ActionLink("Admin", "About", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="~/Views/Home/About.cshtml" id="about">About</a>
+        <a id="blog">Blog</a>
+        <a href="#" id="projects">Projects</a>
+        <a href="#" id="contact">Contact</a>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - <b>Job Protal</b></p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
