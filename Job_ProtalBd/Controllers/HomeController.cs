@@ -38,12 +38,8 @@ namespace Job_ProtalBd.Controllers
 
             return View();
         }
-        public ActionResult to()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }public ActionResult tooo()
+       
+        public ActionResult tooo()
         {
             ViewBag.Message = "Your contact page.";
 

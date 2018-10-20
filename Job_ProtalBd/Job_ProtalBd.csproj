@@ -226,8 +226,9 @@
     <Content Include="Content\List.css" />
     <Content Include="Content\MasterHome.css" />
     <Content Include="Content\Sheeker\Login.css" />
-    <Content Include="Content\Sheeker\menubar.css" />
     <Content Include="Content\Sheeker\Registration.css" />
+    <Content Include="Content\Sheeker\HomePage.css" />
+    <Content Include="Content\StyleSheet.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -298,13 +299,11 @@
     <Content Include="Views\Sheeker\Login.cshtml" />
     <Content Include="Views\Home\Indo.cshtml" />
     <Content Include="Views\Sheeker\list.cshtml" />
-    <Content Include="Views\Shared\_JobSheeker.cshtml" />
+    <Content Include="Views\Shared\_SheekerMaster.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Company.cshtml" />
-    <Content Include="Views\Shared\_MasterHome.cshtml" />
     <Content Include="Views\Home\LoginorRegistration.cshtml" />
-    <Content Include="Views\Home\to.cshtml" />
-    <Content Include="Views\Home\tooo.cshtml" />
+    <Content Include="Views\Shared\_MasterHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Admin\" />

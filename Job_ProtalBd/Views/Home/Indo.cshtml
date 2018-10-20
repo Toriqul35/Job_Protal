@@ -1,16 +1,15 @@
 ﻿
 @{
-    ViewBag.Title = "Indo";
-    Layout = "~/Views/Shared/_JobSheeker.cshtml";
+    Layout = "~/Views/Shared/_SheekerMaster.cshtml";
 }
 
-<h2>Indo</h2>
 
-Welcome @HttpContext.Current.User.Identity.Name
+
+<h2 style="text-align:center">Welcome @HttpContext.Current.User.Identity.Name</h2>
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("Logout", "Registration", FormMethod.Post, new { id = "logoutFrom" }))
     {
-        <a href="~/Job_ProtalBd.csproj">Logout</a>
+        
     }
 }

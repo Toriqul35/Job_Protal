@@ -39,12 +39,12 @@ namespace Job_ProtalBd.Models
 
         [Display(Name = "Date Of Birth")]
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{dd/mm/yyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
         public DateTime Date_Of_Birth { get; set; }
 
         [Display(Name = "Date Of Entry")]
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{dd/mm/yyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-mm-yyyy}")]
         public DateTime Date_Of_Entry { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = " Password Required")]

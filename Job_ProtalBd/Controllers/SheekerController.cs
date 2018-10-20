@@ -5,8 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using Job_ProtalBd.Models;
 using System.Net.Mail;
-using System.Net;
 using System.Web.Security;
+using System.Net;
+using System.Configuration;
 
 namespace Job_ProtalBd.Controllers
 {
@@ -49,6 +50,8 @@ namespace Job_ProtalBd.Controllers
                     dc.Registrations.Add(Registration);
                     dc.SaveChanges();
 
+
+                 //  SendVerificationLinkEmail(Registration.E_Mail,Registration.ActivationCode.ToString());
                     message = "Registration Sucessfully done.Account activication link" +
                               "has been send your email id:"+Registration.E_Mail;
 
@@ -64,6 +67,7 @@ namespace Job_ProtalBd.Controllers
             ViewBag.Status = Status;
             return View(Registration);
           }
+        
 
         [HttpGet]
         public ActionResult VerifyAccount(string id)
@@ -83,9 +87,8 @@ namespace Job_ProtalBd.Controllers
                 {
                     ViewBag.Message = "Invalid Request";
                 }
-
             }
-            ViewBag.Status =Status;
+            ViewBag.Status = Status;
             return View();
         }
 
@@ -145,7 +148,7 @@ namespace Job_ProtalBd.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Login", "Registration1");
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult list()
@@ -158,7 +161,7 @@ namespace Job_ProtalBd.Controllers
             }
             return View(Registrations);
         }
-
+     
         [NonAction]
         public bool IsEmailExist(string E_Mail)
         {
@@ -167,7 +170,41 @@ namespace Job_ProtalBd.Controllers
                 var v = dc.Registrations.Where(a => a.E_Mail == E_Mail).FirstOrDefault();
                 return v != null;
             }
+            
         }
-        
+       /* [NonAction]
+        public void SendVerificationLinkEmail(string emailID, string activationCode)
+        {
+            var verifyUrl = "/User/VerifyAccount/" + activationCode;
+            var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
+
+            var fromEmail = new MailAddress("dotnetawesome@gmail.com", "Dotnet Awesome");
+            var toEmail = new MailAddress(emailID);
+            var fromEmailPassword = "********"; // Replace with actual password
+            string subject = "Your account is successfully created!";
+
+            string body = "<br/><br/>We are excited to tell you that your Dotnet Awesome account is" +
+                " successfully created. Please click on the below link to verify your account" +
+                " <br/><br/><a href='" + link + "'>" + link + "</a> ";
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromEmail.Address, fromEmailPassword)
+            };
+
+            using (var message = new MailMessage(fromEmail, toEmail)
+            {
+                Subject = subject,
+                Body = body,
+                IsBodyHtml = true
+            })
+                smtp.Send(message);
+        }*/
+
     }
 }
