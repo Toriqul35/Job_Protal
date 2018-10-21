@@ -6,24 +6,26 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/Sheeker/HomePage.css")
 </head>
-<body>
-    <ul style="margin-left:-16px">
-        <li>@Html.ActionLink("Job Protal", "About", "Home")</li>
-        <li>@Html.ActionLink("Home", "About", "Home")</li>
-        <li>@Html.ActionLink("Company", "About", "Home")</li>
-        <li>@Html.ActionLink("Job Search", "Index", "Home")</li>
-        <li>@Html.ActionLink("Notice", "Index", "Home")</li>
-        <li>
-            @Html.ActionLink("Total Enrolled", "_Jobsheeker", "Views")
-            <ul>
-                <li> @Html.ActionLink("Job Sheeker", "_Jobsheeker", "Views")</li>
-                <li> @Html.ActionLink("Company", "_Jobsheeker", "Views")</li>
-            </ul>
-        </li>
-        <li>@Html.ActionLink("Interview", "list", "Sheeker")</li>
-        <li>@Html.ActionLink("Setting", "list", "Sheeker")</li>
-        <li>@Html.ActionLink("Logout", "list", "Sheeker")</li>
-    </ul>
+<body><div class="head">
+          <ul>
+              <li> <img src="~/Image/logo1.png" alt="logo" height="45" width="160" /></li>
+              <li style="margin-left:27px">@Html.ActionLink("Job Protal", "About", "Home")</li>
+              <li>@Html.ActionLink("Home", "Indo", "Home")</li>
+              <li>@Html.ActionLink("Company", "About", "Home")</li>
+              <li>@Html.ActionLink("Job Search", "Index", "Home")</li>
+              <li>@Html.ActionLink("Notice", "Index", "Home")</li>
+              <li>
+                  @Html.ActionLink("Total Enrolled", "_Jobsheeker", "Views")
+                  <ul>
+                      <li> @Html.ActionLink("Job Sheeker", "_Jobsheeker", "Views")</li>
+                      <li> @Html.ActionLink("Company", "_Jobsheeker", "Views")</li>
+                  </ul>
+              </li>
+              <li>@Html.ActionLink("Interview", "list", "Sheeker")</li>
+              <li>@Html.ActionLink("Setting", "list", "Sheeker")</li>
+              <li>@Html.ActionLink("Logout", "list", "Sheeker")</li>
+          </ul>
+   </div>
     <div class="nav">
         <ul class="active"><li class="nvli" style="text-align:center">My Resume</li></ul>
         <ul><li>@Html.ActionLink("View Resume", "About", "Home")</li></ul>

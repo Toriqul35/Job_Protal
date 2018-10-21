@@ -9,36 +9,37 @@
     @Styles.Render("~/Content/StyleSheet.css")
 </head>
 <body>
-    <ul>
-        <li>@Html.ActionLink("Job Protal", "About", "Home")</li>
-        <li>@Html.ActionLink("Company", "About", "Home")</li>
-        <li>@Html.ActionLink("Job Search", "Index", "Home")</li>
-        <li>@Html.ActionLink("Notice", "_SheekerMaster", "Shared")</li>
-        <li>
-            @Html.ActionLink("Total Enrolled", "_Jobsheeker", "Views")
+    <div>
         <ul>
-            <li> @Html.ActionLink("Job Sheeker", "_Jobsheeker", "Views")</li>
-            <li> @Html.ActionLink("Company", "_Jobsheeker", "Views")</li>
+            <li>@Html.ActionLink("Job Protal", "About", "Home")</li>
+            <li>@Html.ActionLink("Company", "About", "Home")</li>
+            <li>@Html.ActionLink("Job Search", "Index", "Home")</li>
+            <li>@Html.ActionLink("Notice", "_SheekerMaster", "Shared")</li>
+            <li>
+                @Html.ActionLink("Total Enrolled", "_Jobsheeker", "Views")
+                <ul>
+                    <li> @Html.ActionLink("Job Sheeker", "_Jobsheeker", "Views")</li>
+                    <li> @Html.ActionLink("Company", "_Jobsheeker", "Views")</li>
+                </ul>
+            </li>
+            <li>@Html.ActionLink("Interview", "list", "Sheeker")</li>
+            <li>
+                @Html.ActionLink("Registration", "Registration", "Home")
+                <ul>
+                    <li>@Html.ActionLink("Job Sheeker", "Registration", "Sheeker")</li>
+                    <li>@Html.ActionLink("Company", "_Jobsheeker", "Views")</li>
+                </ul>
+            </li>
+            <li>
+                @Html.ActionLink("Login", "Registration", "Home")
+                <ul>
+                    <li>@Html.ActionLink("Job Sheeker", "Login", "Sheeker")</li>
+                    <li>@Html.ActionLink("Company", "_Jobsheeker", "Views")</li>
+                </ul>
+            </li>
+            <li>@Html.ActionLink("Admin", "About", "Home")</li>
         </ul>
-    </li>
-    <li>@Html.ActionLink("Interview", "list", "Sheeker")</li>
-    <li>
-        @Html.ActionLink("Registration", "Registration", "Home")
-    <ul>
-        <li>@Html.ActionLink("Job Sheeker", "Registration", "Sheeker")</li>
-        <li>@Html.ActionLink("Company", "_Jobsheeker", "Views")</li>
-    </ul>
-    </li>
-    <li>
-        @Html.ActionLink("Login", "Registration", "Home")
-    <ul>
-        <li>@Html.ActionLink("Job Sheeker", "Login", "Sheeker")</li>
-        <li>@Html.ActionLink("Company", "_Jobsheeker", "Views")</li>
-    </ul>
-    </li>
-    <li>@Html.ActionLink("Admin", "About", "Home")</li>
-    </ul>
-    
+    </div>
 
     <div class="container body-content">
         @RenderBody()
