@@ -4,12 +4,12 @@
     padding: 8px;
 }
 ul {
-   
     padding: 0px;
     margin: 0px;
     list-style: none;
 }
     ul li {
+        text-decoration: none;
         height: 45px;
         float: left;
         width: 132px;
@@ -18,18 +18,17 @@ ul {
         line-height: 45px;
         font-size: 17px;
         opacity: .8;
-       
     }
         ul li a {
+            text-decoration: none;
             color: white;
             display: block;
-            text-decoration: none;
         }
     ul li a:hover {
         background-color: green;
         color: orangered;
         font-size: 20px;
-        font: bold;
+        font:bold;
     }
 ul li ul li{
     display:none;
@@ -45,15 +44,15 @@ ul li:hover ul li{
     font-size: 15px;
     color: whitesmoke;
     border-radius: 0 5px 5px 0;
-    margin-top: 35px;
+    margin-top:-15px;
     margin-left: -33px;
 }
     .nav li {
-       
         text-align: center;
         padding-left: 2px;
-        background-color: cadetblue;
+        background-color:cadetblue;
         width: 160px;
+      
     }
 .nvli {
     color:green;

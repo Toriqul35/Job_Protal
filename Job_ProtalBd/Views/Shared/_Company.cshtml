@@ -1,1 +1,53 @@
-﻿
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/Company/HomePage.css")
+</head>
+<body>
+    <div class="head">
+        <ul>
+            <li> <img src="~/Image/logo1.png" alt="logo" height="45" width="160" /></li>
+            <li style="margin-left:27px">@Html.ActionLink("Job Protal", "About", "Home")</li>
+            <li>@Html.ActionLink("Home", "Indo", "Home")</li>
+            <li>@Html.ActionLink("Post New Job", "About", "Home")</li>
+            <li>@Html.ActionLink("Analysis", "Index", "Home")</li>
+            <li>@Html.ActionLink(" Create Notice", "Index", "Home")</li>
+            <li>
+                @Html.ActionLink("Total Enrolled", "_Jobsheeker", "Views")
+                <ul>
+                    <li> @Html.ActionLink("Job Sheeker", "_Jobsheeker", "Views")</li>
+                    <li> @Html.ActionLink("Company", "_Jobsheeker", "Views")</li>
+                </ul>
+            </li>
+            <li>@Html.ActionLink("Post Interview", "list", "Sheeker")</li>
+            <li>@Html.ActionLink("Setting", "Setting", "Sheeker")</li>
+            <li>@Html.ActionLink("Logout", "list", "Sheeker")</li>
+        </ul>
+    </div>
+    <div class="nav">
+        <ul class="active"><li class="nvli" style="text-align:center">My Profile </li></ul>
+        <ul><li>@Html.ActionLink("Veiw Contact", "About", "Home")</li></ul>
+        <ul><li>@Html.ActionLink("Reject Application", "About", "Home")</li></ul>
+        <ul><li>@Html.ActionLink("Applyied Job", "About", "Home")</li></ul>
+        <ul><li>@Html.ActionLink("Followers Sheeker", "About", "Home")</li></ul>
+        <ul><li>@Html.ActionLink("Emailed Sheekr", "About", "Home")</li></ul>
+        <ul class="active"><li class="nvli" style="text-align:center">Jov Sheeker</li></ul>
+        <ul><li>@Html.ActionLink("Message", "About", "Home")</li></ul>
+    </div>
+    <div class="right">
+        <ul><li class="about">@Html.ActionLink("Feadback", "About", "Home")</li></ul>
+    </div>
+    <div class="right">
+        <ul><li class="helpline">@Html.ActionLink("Contact", "About", "Home")</li></ul>
+    </div>
+    <div class="right">
+        <ul><li class="helpline2">@Html.ActionLink("About", "About", "Home")</li></ul>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

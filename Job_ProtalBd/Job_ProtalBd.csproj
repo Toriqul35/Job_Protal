@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Job_ProtalBd</RootNamespace>
     <AssemblyName>Job_ProtalBd</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -72,6 +73,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -79,11 +81,8 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -128,6 +127,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -203,23 +203,17 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Admin.mdf" />
-    <Content Include="App_Data\Admin_log.ldf">
-      <DependentUpon>Admin.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Company.mdf" />
-    <Content Include="App_Data\Company_log.ldf">
-      <DependentUpon>Company.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Data\Sheeker.mdf" />
     <Content Include="App_Data\Sheeker_log.ldf">
       <DependentUpon>Sheeker.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\Admin\menu.css" />
     <Content Include="Content\All.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Company\HomePage.css" />
     <Content Include="Content\dropdown.css" />
     <Content Include="Content\Home\LoginRegitration.css" />
     <Content Include="Content\Home\menu.css" />
@@ -228,6 +222,7 @@
     <Content Include="Content\Sheeker\Login.css" />
     <Content Include="Content\Sheeker\Registration.css" />
     <Content Include="Content\Sheeker\HomePage.css" />
+    <Content Include="Content\Sheeker\Setting.css" />
     <Content Include="Content\StyleSheet.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -237,7 +232,7 @@
     <Content Include="Image\image2.jpg" />
     <Content Include="Image\image3.png" />
     <Content Include="Image\image4.jpg" />
-    <Content Include="Image\logo.png" />
+    <Content Include="Image\logo1.png" />
     <Content Include="Models\Models.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Models.edmx</DependentUpon>
@@ -266,6 +261,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.filedrop.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -305,12 +301,14 @@
     <Content Include="Views\Shared\_Company.cshtml" />
     <Content Include="Views\Home\LoginorRegistration.cshtml" />
     <Content Include="Views\Shared\_MasterHome.cshtml" />
+    <Content Include="Views\Sheeker\Setting.cshtml" />
+    <Content Include="Views\Shared\_Admin.cshtml" />
+    <Content Include="Views\Sheeker\UploadResume.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Admin\" />
-    <Folder Include="Content\Company\" />
     <Folder Include="Models\Admin\" />
     <Folder Include="Models\Company\" />
+    <Folder Include="UploadResume\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

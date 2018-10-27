@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Setting";
+    Layout = "~/Views/Shared/_SheekerMaster.cshtml";
+    @Styles.Render("~/Content/Sheeker/Setting.css")
+}
+<div class="setting">
+    <h2><b>Account Setting</b></h2>
+    <p>Here you will be able to change your password, resume privacy, notification settings, delete resume, delete account and set / change User ID at any time.</p>
+    <div class="delete" onclick=""><ul><li class="uli">@Html.ActionLink("Change Password", "About", "Home")</li></ul></div>
+    <div class="email" onclick=""><ul><li class="uli">@Html.ActionLink(" Email Notification", "About", "Home")</li></ul></div>
+    <div class="deleteacc" onclick=""><ul><li class="uli">@Html.ActionLink("Delete Account", "About", "Home")</li></ul></div>
+    <div class="deleteres" onclick=""><ul><li class="uli">@Html.ActionLink(" Delete Resume", "About", "Home")</li></ul></div>
+    <div class="userchange" onclick=""><ul><li class="uli">@Html.ActionLink("Use/Id Change", "About", "Home")</li></ul></div>
+</div>
+
+

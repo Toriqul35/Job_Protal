@@ -1,0 +1,55 @@
+﻿body {
+}
+.setting{
+    padding:30px;
+    width:650px;
+    height:435px;
+    background-color:cadetblue;
+    margin-left:560px;
+    margin-top:50px;
+}
+.delete {
+    text-decoration: none;
+    width: 300px;
+    height: 90px;
+    border: 5px;
+    background-color: red;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.email {
+    width: 300px;
+    height: 90px;
+    border: 5px;
+    background-color: red;
+    margin-left: 340px;
+    margin-top: -90px;
+}
+.uli{
+    width:300px;
+    font-size:25px;
+
+}
+.deleteacc {
+    width: 300px;
+    height: 90px;
+    border: 5px;
+    background-color: red;
+    margin-left: 10px;
+    margin-top: 25px;
+}
+.deleteres {
+    width: 300px;
+    height:90px;
+    background-color: red;
+    margin-left: 340px;
+    margin-top:-90px;
+}
+
+.userchange {
+    width: 300px;
+    height: 90px;
+    background-color: red;
+    margin-left:10px;
+    margin-top:25px;
+}

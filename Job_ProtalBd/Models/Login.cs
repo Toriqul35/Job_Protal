@@ -8,7 +8,7 @@ namespace Job_ProtalBd.Models
 {
     public class Login
     {
-        [Display(Name = "E-Mail Id")]
+        [Display(Name = "E_Mail Id")]
         [Required(AllowEmptyStrings = false, ErrorMessage = " E_Mail  Id Required")]
         [DataType(DataType.EmailAddress)]
         public string E_Mail { get; set; }

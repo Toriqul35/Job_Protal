@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Job_ProtalBd.Models;
+using System.IO;
 using System.Net.Mail;
 using System.Web.Security;
 using System.Net;
-using System.Configuration;
 
 namespace Job_ProtalBd.Controllers
 {
@@ -50,8 +50,8 @@ namespace Job_ProtalBd.Controllers
                     dc.Registrations.Add(Registration);
                     dc.SaveChanges();
 
-
-                 //  SendVerificationLinkEmail(Registration.E_Mail,Registration.ActivationCode.ToString());
+             
+                // SendVerificationLinkEmail(Registration.E_Mail,Registration.ActivationCode.ToString());
                     message = "Registration Sucessfully done.Account activication link" +
                               "has been send your email id:"+Registration.E_Mail;
 
@@ -161,25 +161,54 @@ namespace Job_ProtalBd.Controllers
             }
             return View(Registrations);
         }
+        public ActionResult Setting()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult UploadResume()
+        {
+            return View();
+        }
      
+        [HttpPost]
+        public ActionResult UploadResume(IEnumerable<HttpPostedFileBase> files)
+        {
+            foreach (var file in files)
+            {
+                string fil = Guid.NewGuid() +Path.GetExtension(file.FileName);
+                file.SaveAs(Path.Combine(Server.MapPath("~/UploadResume"), fil));
+                
+            }
+            return View("file uploaded successfully");
+        }
+
+
         [NonAction]
         public bool IsEmailExist(string E_Mail)
         {
             using (SheekerEntities1 dc = new SheekerEntities1())
             {
-                var v = dc.Registrations.Where(a => a.E_Mail == E_Mail).FirstOrDefault();
+                Registration v = dc.Registrations.Where(a => a.E_Mail == E_Mail).FirstOrDefault();
                 return v != null;
             }
             
         }
-       /* [NonAction]
-        public void SendVerificationLinkEmail(string emailID, string activationCode)
+       /*[NonAction]
+        public void SendVerificationLinkEmail(string E_Mail, string ActivationCode)
         {
-            var verifyUrl = "/User/VerifyAccount/" + activationCode;
+            var scheme = Request.Url.Scheme;
+            var host = Request.Url.Host;
+            var port = Request.Url.Port;
+
+            string url = scheme + "://" + host;
+
+            var verifyUrl = "//" + ActivationCode;
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
 
-            var fromEmail = new MailAddress("dotnetawesome@gmail.com", "Dotnet Awesome");
-            var toEmail = new MailAddress(emailID);
+            var fromEmail = new MailAddress("jobportalbd@gmail.com", "Dotnet Awesome");
+            var toEmail = new MailAddress(E_Mail);
             var fromEmailPassword = "********"; // Replace with actual password
             string subject = "Your account is successfully created!";
 

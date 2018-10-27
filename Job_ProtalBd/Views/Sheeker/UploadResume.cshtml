@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "UploadResume";
+    Layout = "~/Views/Shared/_SheekerMaster.cshtml";
+}
+<DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        @using (Html.BeginForm("UploadResume", "Sheeker", FormMethod.Post, new { enctype="multipart/from-data"}))
+        {
+            <table>
+                <tr>
+                    <td> Photo</td>
+                    <td> <input  type="file" name=" photo"/></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><input  type="button" value="Submit"/></td>
+                </tr>
+            </table>
+        }
+
+    </body>
+</html>

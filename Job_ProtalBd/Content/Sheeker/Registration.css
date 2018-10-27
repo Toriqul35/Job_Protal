@@ -1,10 +1,8 @@
-﻿body {
-}
-.menu{
+﻿.menu{
     width:500px;
     height:680px;
     background-color:gray;
    margin-left:320px;
    color:burlywood;
-
+   margin-top:40px;
 }

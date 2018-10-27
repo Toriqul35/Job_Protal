@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/Admin/menu.css")
+</head>
+<body>
+    <div class="head">
+        <ul>
+            <li> <img src="~/Image/logo1.png" alt="logo" height="45" width="160" /></li>
+            <li style="margin-left:27px">@Html.ActionLink("Job Protal", "About", "Home")</li>
+            <li style="width:100px">@Html.ActionLink("Home", "Indo", "Home")</li>
+            <li style="width:180px">@Html.ActionLink(" Search Company", "About", "Home")</li>
+            <li>@Html.ActionLink("Job Search", "Index", "Home")</li>
+            <li>@Html.ActionLink("Create Notice", "Index", "Home")</li>
+            <li style="width:180px">
+                @Html.ActionLink(" Create Enrolled", "_Jobsheeker", "Views")
+                <ul>
+                    <li> @Html.ActionLink("Job Sheeker", "_Jobsheeker", "Views")</li>
+                    <li> @Html.ActionLink("Company", "_Jobsheeker", "Views")</li>
+                </ul>
+            </li>
+            <li style="width:180px">@Html.ActionLink(" Create Interview", "list", "Sheeker")</li>
+            <li style="float:right">@Html.ActionLink("Logout", "list", "Sheeker")</li>
+        </ul>
+    </div>   
+    <div class="admin">
+        <ul><li style="float:left">@Html.ActionLink("Company", "About", "Home")</li></ul>
+        <ul><li style="margin-left:3px;">@Html.ActionLink("Job Sheeker", "About", "Home")</li></ul>
+        <ul><li style="margin-left:1080px; margin-top:-45px">@Html.ActionLink("Membership", "About", "Home")</li></ul>
+        <ul><li style="float:right; margin-top:-45px">@Html.ActionLink("Setting", "About", "Home")</li></ul>
+    </div>
+    <div class="right">
+        <ul><li class="about">@Html.ActionLink("Feadback", "About", "Home")</li></ul>
+    </div>
+    <div class="right">
+        <ul><li class="helpline">@Html.ActionLink(" Edit Contact", "About", "Home")</li></ul>
+    </div>
+    <div class="right">
+        <ul><li class="helpline2">@Html.ActionLink(" Edit About", "About", "Home")</li></ul>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
